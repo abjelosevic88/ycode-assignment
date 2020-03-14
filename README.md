@@ -17,6 +17,8 @@ The project was buit using standard Laravel functions and coding standards.
 
 API routes end to end tests can be found inside: `backend/tests/Feature/WebsitesApiTest.php`.
 
+Full API documentation can be found on the `/docs/index.html` URL path.
+
 Before the application can be run `.env` file must be created based on the `.env.example` file provided in the `backend/` root directory.
 
 ## Fronted - Vue.js application
