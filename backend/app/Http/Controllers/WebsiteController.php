@@ -29,8 +29,8 @@ class WebsiteController extends Controller
     public function getWebsites(WebsitesGetRequest $request)
     {
         return $this->handleRequest(function () use ($request) {
-            $websites = Website::offset($request->get('offset') ?? Website::PAGINATION_OFFSET)
-                                ->limit($request->get('limit') ?? Website::PAGINATION_LIMIT)
+            $websites = Website::offset($request->get('offset', Website::PAGINATION_OFFSET))
+                                ->limit($request->get('limit', Website::PAGINATION_LIMIT))
                                 ->get();
 
             if (count($websites) === 0) {
