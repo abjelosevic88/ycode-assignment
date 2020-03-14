@@ -5,7 +5,7 @@ namespace App\Traits;
 use Exception;
 use Illuminate\Http\JsonResponse;
 
-trait RequestApiTrait
+trait ApiRequestTrait
 {
     /**
      * Handle request by calling the request callback and catch any exceptions.

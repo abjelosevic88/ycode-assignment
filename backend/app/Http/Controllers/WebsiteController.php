@@ -7,11 +7,11 @@ use App\Website;
 use App\Http\Requests\WebsitesGetRequest;
 use App\Http\Requests\WebsiteCreateRequest;
 use App\Http\Requests\WebsitesSearchRequest;
-use App\Traits\RequestApiTrait;
+use App\Traits\ApiRequestTrait;
 
 class WebsiteController extends Controller
 {
-    use RequestApiTrait;
+    use ApiRequestTrait;
 
     /**
      * Get a listing of the websites.
