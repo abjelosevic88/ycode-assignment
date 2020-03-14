@@ -4,6 +4,7 @@ namespace App\Traits;
 
 use Exception;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\DB;
 
 trait ApiRequestTrait
 {
@@ -15,9 +16,14 @@ trait ApiRequestTrait
      */
     public function handleRequest(callable $callback) {
         try {
-            return $callback();
+            DB::beginTransaction();
+            $computedValue = $callback();
+            DB::commit();
+
+            return $computedValue;
         } catch (Exception $e) {
             logger()->error($e);
+            DB::rollBack();
             return response()->json(
                 [ 'message' => __('api.generic.errors.500') ],
                 JsonResponse::HTTP_INTERNAL_SERVER_ERROR
