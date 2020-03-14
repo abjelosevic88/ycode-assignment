@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Website extends Model
 {
+    const PAGINATION_OFFSET = 0;
     const PAGINATION_LIMIT = 10;
 
     /**

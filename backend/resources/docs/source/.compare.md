@@ -30,7 +30,7 @@ Welcome to the generated API reference.
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/websites?limit=et&offset=harum" \
+    -G "http://localhost/api/websites?limit=accusamus&offset=corrupti" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -41,8 +41,8 @@ const url = new URL(
 );
 
 let params = {
-    "limit": "et",
-    "offset": "harum",
+    "limit": "accusamus",
+    "offset": "corrupti",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -109,11 +109,7 @@ fetch(url, {
 
 ```json
 {
-    "message": "Internal Server Error.",
-    "data": {
-        "total": 0,
-        "websites": []
-    }
+    "message": "Internal Server Error."
 }
 ```
 
@@ -139,7 +135,7 @@ curl -X POST \
     "http://localhost/api/websites" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"excepturi","url":"corrupti"}'
+    -d '{"name":"ut","url":"a"}'
 
 ```
 
@@ -154,8 +150,8 @@ let headers = {
 };
 
 let body = {
-    "name": "excepturi",
-    "url": "corrupti"
+    "name": "ut",
+    "url": "a"
 }
 
 fetch(url, {
@@ -186,8 +182,7 @@ fetch(url, {
 
 ```json
 {
-    "message": "Internal Server Error.",
-    "data": null
+    "message": "Internal Server Error."
 }
 ```
 
@@ -209,7 +204,7 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/websites/search?query=voluptas" \
+    -G "http://localhost/api/websites/search?query=nihil" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -220,7 +215,7 @@ const url = new URL(
 );
 
 let params = {
-    "query": "voluptas",
+    "query": "nihil",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -313,8 +308,7 @@ fetch(url, {
 
 ```json
 {
-    "message": "Internal Server Error.",
-    "data": null
+    "message": "Internal Server Error."
 }
 ```
 
@@ -325,7 +319,7 @@ fetch(url, {
 
 Parameter | Status | Description
 --------- | ------- | ------- | -----------
-    `query` |  optional  | string required Search query string.
+    `query` |  optional  | string   required   Search query string.
 
 <!-- END_dfc87a92f8947770bee88b3cd4c30a19 -->
 

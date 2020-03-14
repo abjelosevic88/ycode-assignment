@@ -78,14 +78,14 @@
       }
     },
     methods: {
-      processResError (err, errorMsg) {
+      processResError (err, errorMsg = 'Server of configuration error.') {
         console.warn('Error getting search results: ', err);
 
         this.loading = false;
         this.websites = [];
         this.error = true;
         this.hidePagination = true;
-        this.errorMsg = err.response.data.message || errorMsg;
+        this.errorMsg = _.get(err, 'response.data.message', errorMsg);
 
         setTimeout(() => {
           this.error = false;

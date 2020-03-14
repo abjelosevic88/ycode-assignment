@@ -7,11 +7,14 @@ use App\Website;
 use App\Http\Requests\WebsitesGetRequest;
 use App\Http\Requests\WebsiteCreateRequest;
 use App\Http\Requests\WebsitesSearchRequest;
+use App\Traits\RequestApiTrait;
 
 class WebsiteController extends Controller
 {
+    use RequestApiTrait;
+
     /**
-     * Get a listing of the resource.
+     * Get a listing of the websites.
      *
      * @queryParam      limit     integer   Offset value.
      * @queryParam      offset    integer   Limit value.
@@ -25,19 +28,19 @@ class WebsiteController extends Controller
      */
     public function getWebsites(WebsitesGetRequest $request)
     {
-        try {
-            $total = Website::count();
+        return $this->handleRequest(function () use ($request) {
+            $websites = Website::offset($request->get('offset') ?? Website::PAGINATION_OFFSET)
+                                ->limit($request->get('limit') ?? Website::PAGINATION_LIMIT)
+                                ->get();
 
-            if ($total === 0) {
+            if (count($websites) === 0) {
                 return response()->json([
                     'message' => __('api.websites.get.notFound'),
                     'data' => [ 'total' => 0, 'websites' => [] ]
                 ], JsonResponse::HTTP_NOT_FOUND);
             }
 
-            $websites = Website::offset($request->get('offset'))
-                                ->limit($request->get('limit'))
-                                ->get();
+            $total = Website::count();
 
             return response()->json([
                 'message' => __('api.websites.get.success'),
@@ -46,17 +49,11 @@ class WebsiteController extends Controller
                     'websites' => $websites
                 ]
             ], JsonResponse::HTTP_OK);
-        } catch (Exception $e) {
-            Log::error($e);
-            return response()->json([
-                'message' => __('api.generic.errors.500'),
-                'data' => [ 'total' => 0, 'websites' => [] ]
-            ], JsonResponse::HTTP_INTERNAL_SERVER_ERROR);
-        }
+        });
     }
 
     /**
-     * Store a newly created resource in the batabase.
+     * Store a newly created website in the database.
      *
      * @bodyParam      name  string  required    Name of the website.
      * @bodyParam      url   string  required    The URL of the website.
@@ -69,20 +66,14 @@ class WebsiteController extends Controller
      */
     public function postWebsite(WebsiteCreateRequest $request)
     {
-        try {
+        return $this->handleRequest(function () use ($request) {
             $website = Website::create($request->only(['name', 'url']));
 
             return response()->json([
                 'message' => __('api.websites.create.success'),
                 'data' => $website
             ], JsonResponse::HTTP_OK);
-        } catch (Exception $e) {
-            Log::error($e);
-            return response()->json([
-                'message' => __('api.generic.errors.500'),
-                'data' => null
-            ], JsonResponse::HTTP_INTERNAL_SERVER_ERROR);
-        }
+        });
     }
 
     /**
@@ -97,8 +88,9 @@ class WebsiteController extends Controller
      * @param  \App\Http\Requests\WebsitesSearchRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function getSearch(WebsitesSearchRequest $request) {
-        try {
+    public function getSearch(WebsitesSearchRequest $request)
+    {
+        return $this->handleRequest(function () use ($request) {
             $websites = Website::where('name', 'like', '%' . $request->get('query') . '%')
                                 ->limit(Website::PAGINATION_LIMIT)
                                 ->get();
@@ -114,12 +106,6 @@ class WebsiteController extends Controller
                 'message' => __('api.websites.get.success'),
                 'data' => [ 'websites' => $websites ]
             ], JsonResponse::HTTP_OK);
-        } catch (Exception $e) {
-            Log::error($e);
-            return response()->json([
-                'message' => __('api.generic.errors.500'),
-                'data' => [ 'websites' => [] ]
-            ], JsonResponse::HTTP_INTERNAL_SERVER_ERROR);
-        }
+        });
     }
 }

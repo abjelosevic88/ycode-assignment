@@ -2,7 +2,7 @@
     "variables": [],
     "info": {
         "name": "Laravel API",
-        "_postman_id": "2308489a-9f00-4e6a-91b9-7ce090e0865e",
+        "_postman_id": "ccf448f4-e323-4cdb-91b2-ef01c9d3d339",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -21,13 +21,13 @@
                             "query": [
                                 {
                                     "key": "limit",
-                                    "value": "et",
+                                    "value": "accusamus",
                                     "description": "integer   Offset value.",
                                     "disabled": false
                                 },
                                 {
                                     "key": "offset",
-                                    "value": "harum",
+                                    "value": "corrupti",
                                     "description": "integer   Limit value.",
                                     "disabled": false
                                 }
@@ -74,7 +74,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"name\": \"excepturi\",\n    \"url\": \"corrupti\"\n}"
+                            "raw": "{\n    \"name\": \"ut\",\n    \"url\": \"a\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -90,8 +90,8 @@
                             "query": [
                                 {
                                     "key": "query",
-                                    "value": "voluptas",
-                                    "description": "string required Search query string.",
+                                    "value": "nihil",
+                                    "description": "string   required   Search query string.",
                                     "disabled": false
                                 }
                             ]

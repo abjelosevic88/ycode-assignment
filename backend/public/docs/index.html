@@ -55,7 +55,7 @@
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost/api/websites?limit=et&amp;offset=harum" \
+    -G "http://localhost/api/websites?limit=accusamus&amp;offset=corrupti" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
@@ -63,8 +63,8 @@
 );
 
 let params = {
-    "limit": "et",
-    "offset": "harum",
+    "limit": "accusamus",
+    "offset": "corrupti",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -126,11 +126,7 @@ fetch(url, {
 <p>Example response (500):</p>
 </blockquote>
 <pre><code class="language-json">{
-    "message": "Internal Server Error.",
-    "data": {
-        "total": 0,
-        "websites": []
-    }
+    "message": "Internal Server Error."
 }</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/websites</code></p>
@@ -166,7 +162,7 @@ fetch(url, {
     "http://localhost/api/websites" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"excepturi","url":"corrupti"}'
+    -d '{"name":"ut","url":"a"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost/api/websites"
@@ -178,8 +174,8 @@ let headers = {
 };
 
 let body = {
-    "name": "excepturi",
-    "url": "corrupti"
+    "name": "ut",
+    "url": "a"
 }
 
 fetch(url, {
@@ -206,8 +202,7 @@ fetch(url, {
 <p>Example response (500):</p>
 </blockquote>
 <pre><code class="language-json">{
-    "message": "Internal Server Error.",
-    "data": null
+    "message": "Internal Server Error."
 }</code></pre>
 <h3>HTTP Request</h3>
 <p><code>POST api/websites</code></p>
@@ -243,7 +238,7 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost/api/websites/search?query=voluptas" \
+    -G "http://localhost/api/websites/search?query=nihil" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
@@ -251,7 +246,7 @@ fetch(url, {
 );
 
 let params = {
-    "query": "voluptas",
+    "query": "nihil",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -339,8 +334,7 @@ fetch(url, {
 <p>Example response (500):</p>
 </blockquote>
 <pre><code class="language-json">{
-    "message": "Internal Server Error.",
-    "data": null
+    "message": "Internal Server Error."
 }</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/websites/search</code></p>
@@ -357,7 +351,7 @@ fetch(url, {
 <tr>
 <td><code>query</code></td>
 <td>optional</td>
-<td>string required Search query string.</td>
+<td>string   required   Search query string.</td>
 </tr>
 </tbody>
 </table>
