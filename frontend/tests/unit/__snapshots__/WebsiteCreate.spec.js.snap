@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WebsitesCreate should render correctly 1`] = `
+<v-container>
+  <v-row
+    justify="center"
+  >
+    <v-col
+      cols="12"
+      md="6"
+      sm="6"
+    >
+      <v-alert
+        dismissible=""
+        transition="scale-transition"
+        type="success"
+      >
+        
+        Website successfuly created.
+      
+      </v-alert>
+       
+      <v-alert
+        dismissible=""
+        transition="scale-transition"
+        type="error"
+      >
+        
+        
+      
+      </v-alert>
+       
+      <v-card>
+        <v-card-title>
+          Website creation form
+        </v-card-title>
+         
+        <v-card-text>
+          <v-form>
+            <v-text-field
+              label="Name"
+              required=""
+              rules="function (v) {
+        return !!v || 'Name is required';
+      }"
+            />
+             
+            <v-text-field
+              label="URL"
+              required=""
+              rules="function (v) {
+        return !!v || 'URL is required';
+      },function (v) {
+        return (/^((http|https)?:\\\\/\\\\/)?([\\\\da-z.-]+)\\\\.([a-z.]{2,6})([/\\\\w .-]*)*\\\\/?$/.test(v) || 'URL is not valid'
+        );
+      }"
+            />
+          </v-form>
+        </v-card-text>
+         
+        <v-card-actions>
+          <v-btn
+            color="primary"
+          >
+            Save
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-col>
+  </v-row>
+</v-container>
+`;

@@ -1,0 +1,10 @@
+{
+    "message": "Website successfully created.",
+    "data": {
+        "name": "TEST NAME",
+        "url": "http://www.effertz.co/sss",
+        "updated_at": "2020-03-14T13:34:26.000000Z",
+        "created_at": "2020-03-14T13:34:26.000000Z",
+        "id": 93
+    }
+}

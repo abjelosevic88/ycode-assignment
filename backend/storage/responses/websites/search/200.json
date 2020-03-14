@@ -1,0 +1,56 @@
+{
+    "message": "Websites successfully found.",
+    "data": {
+        "websites": [
+            {
+                "id": 1,
+                "name": "Prof. Yessenia Stark",
+                "url": "https://www.mueller.com/ipsam-cupiditate-voluptatibus-ducimus-unde-id",
+                "created_at": "2020-03-13T23:18:41.000000Z",
+                "updated_at": "2020-03-13T23:18:41.000000Z"
+            },
+            {
+                "id": 7,
+                "name": "Prof. Giovanni Grimes",
+                "url": "http://www.mckenzie.biz/itaque-quo-tempore-consectetur-nisi.html",
+                "created_at": "2020-03-13T23:18:41.000000Z",
+                "updated_at": "2020-03-13T23:18:41.000000Z"
+            },
+            {
+                "id": 26,
+                "name": "Prof. Shana Rolfson",
+                "url": "http://www.ruecker.net/ut-et-odit-vel.html",
+                "created_at": "2020-03-14T10:11:52.000000Z",
+                "updated_at": "2020-03-14T10:11:52.000000Z"
+            },
+            {
+                "id": 31,
+                "name": "Prof. Rickey Senger Sr.",
+                "url": "http://baumbach.com/ea-sed-cupiditate-repudiandae-sit-quidem-nisi.html",
+                "created_at": "2020-03-14T10:11:53.000000Z",
+                "updated_at": "2020-03-14T10:11:53.000000Z"
+            },
+            {
+                "id": 39,
+                "name": "Prof. Nicola Jacobi",
+                "url": "http://www.leannon.net/hic-nemo-minus-quis-sunt-quidem-non-et-tempora",
+                "created_at": "2020-03-14T10:11:53.000000Z",
+                "updated_at": "2020-03-14T10:11:53.000000Z"
+            },
+            {
+                "id": 54,
+                "name": "Prof. Bryana Gleason IV",
+                "url": "https://barrows.com/et-laborum-mollitia-aliquid-aliquam-et-nulla.html",
+                "created_at": "2020-03-14T10:12:14.000000Z",
+                "updated_at": "2020-03-14T10:12:14.000000Z"
+            },
+            {
+                "id": 57,
+                "name": "Prof. Odie Berge",
+                "url": "https://www.wilkinson.com/ipsum-expedita-et-accusamus-corrupti-dolor",
+                "created_at": "2020-03-14T10:12:14.000000Z",
+                "updated_at": "2020-03-14T10:12:14.000000Z"
+            }
+        ]
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "message": "Websites successfully found.",
+    "data": {
+        "total": 3,
+        "websites": [
+            {
+                "id": 1,
+                "name": "Prof. Yessenia Stark",
+                "url": "https://www.mueller.comipsam-cupiditate-voluptatibus-ducimus-unde-id",
+                "created_at": "2020-03-13T23:18:41.000000Z",
+                "updated_at": "2020-03-13T23:18:41.000000Z"
+            },
+            {
+                "id": 2,
+                "name": "Royal DuBuque",
+                "url": "https://torp.org/recusandae-rem-et-cum-error-sit-temporibus-amet-eum.html",
+                "created_at": "2020-03-13T23:18:41.000000Z",
+                "updated_at": "2020-03-13T23:18:41.000000Z"
+            },
+            {
+                "id": 3,
+                "name": "Miss Katelin Simonis III",
+                "url": "http://schultz.com/id-dolore-nulla-quia-quia",
+                "created_at": "2020-03-13T23:18:41.000000Z",
+                "updated_at": "2020-03-13T23:18:41.000000Z"
+            }
+        ]
+    }
+}
