@@ -16,6 +16,9 @@ trait ApiRequestTrait
      */
     public function handleRequest(callable $callback) {
         try {
+            // NOTES :: Transations are totally unnecessary for this assignment :)
+            //          However, I will put it just for possible future task(s), since
+            //          this is generic handler function after all.
             DB::beginTransaction();
             $computedValue = $callback();
             DB::commit();
